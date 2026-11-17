@@ -4,7 +4,8 @@ import {
   storageContextFromDefaults,
   Settings,
   MetadataMode,
-  BaseEmbedding
+  BaseEmbedding,
+  SentenceSplitter
 } from "llamaindex";
 import { QdrantVectorStore } from "@llamaindex/qdrant";
 import { xenovaEmbedding } from "./xenova-embeddings";
@@ -102,9 +103,14 @@ class LlamaIndexRAGService {
       vectorStore: this.vectorStore
     });
     
-    this.index = await VectorStoreIndex.fromDocuments(documents, {
+    // VectorStoreIndex.fromDocuments keeps its own default SentenceSplitter,
+    // so split the documents explicitly to fit long movie metadata.
+    const splitter = new SentenceSplitter({ chunkSize: 4096, chunkOverlap: 200 });
+    const nodes = splitter.getNodesFromDocuments(documents);
+
+    this.index = await VectorStoreIndex.init({
+      nodes,
       storageContext,
-      showProgress: true
     });
 
     this.initialized = true;
