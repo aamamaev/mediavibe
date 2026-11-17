@@ -1,4 +1,4 @@
-# CineFeels Design System — Enhanced Edition
+# MediaVibe Design System — Enhanced Edition
 
 **Version 1.1.0** | December 22, 2025  
 **Tagline**: "Критик, который всегда вас понимает" (The Critic Who Always Understands You)  
@@ -9,7 +9,7 @@
 ## 🎬 Core Brand Identity
 
 ### Tagline & Philosophy
-**"Критик, который всегда вас понимает"** — CineFeels как ваш персональный кинокритик, который:
+**"Критик, который всегда вас понимает"** — MediaVibe как ваш персональный кинокритик, который:
 - Помнит все ваши оценки (10-балльная шкала)
 - Объясняет свои рекомендации на русском языке (YandexGPT)
 - Учится с каждой вашей оценкой (EASE коллаборативная фильтрация)
@@ -25,7 +25,7 @@
 
 ## 📋 Документация Design System
 
-### 1. **CineFeels-Design-System.md** (Обзор)
+### 1. **MediaVibe-Design-System.md** (Обзор)
 **Краткая стратегия и принципы**
 - Document Governance & versioning
 - Design Principles (7 key principles aligned with "Critic" metaphor)
@@ -37,7 +37,7 @@
 
 ---
 
-### 2. **CineFeels-Design-Guidelines.md** (Полное руководство)
+### 2. **MediaVibe-Design-Guidelines.md** (Полное руководство)
 **Развёрнутые гайдлайны со всеми спецификациями**
 - **Color System**: Deep blues (cinema) + warm amber (critic) + cyan (AI)
 - **Typography**: Inter + PT Root UI, 10-point scale integration
@@ -53,7 +53,7 @@
 
 ---
 
-### 3. **CineFeels-Components.md** (Компоненты)
+### 3. **MediaVibe-Components.md** (Компоненты)
 **Детальная спецификация каждого компонента**
 - **QuickRating** (NEW - main anonymous component)
 - **RatingWidget** (10-point star selector)
@@ -65,7 +65,7 @@
 
 ---
 
-### 4. **CineFeels-Implementation.md** (Дорожная карта)
+### 4. **MediaVibe-Implementation.md** (Дорожная карта)
 **План реализации и чеклисты**
 - 8-week roadmap adapted for EASE + YandexGPT
 - EASE service integration checklist
@@ -94,7 +94,7 @@
 
 | Level | Use Case | Metaphor |
 |-------|----------|----------|
-| **Display** | App title "CineFeels" | Critic's byline |
+| **Display** | App title "MediaVibe" | Critic's byline |
 | **Headline** | Movie titles | Film title in critic's essay |
 | **Body Large** | YandexGPT explanation | Critic's main review paragraph |
 | **Body** | Movie synopsis, metadata | Critic's supporting evidence |

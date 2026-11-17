@@ -1,4 +1,4 @@
-# CineFeels Components Specification — EASE + YandexGPT v1.1
+# MediaVibe Components Specification — EASE + YandexGPT v1.1
 
 **Version 1.1.0** | December 22, 2025 | Complete Component API
 
@@ -232,7 +232,7 @@ interface QuickRatingProps {
 **State Management**:
 ```typescript
 // localStorage key
-'cinefeels_quick_ratings'
+'mediavibe_quick_ratings'
 // Format: {movieId: rating, movieId: rating, ...}
 // Duration: Until user logs in or clears cache
 ```

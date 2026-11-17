@@ -1,6 +1,6 @@
-# MediaVibe (CineFeels)
+# MediaVibe
 
-Полная копия сервиса **CineFeels-RAG** — рекомендательная платформа для фильмов
+MediaVibe — рекомендательная платформа для фильмов
 (React + Express, EASE на FastAPI, Qdrant, PostgreSQL, Yandex Cloud Object Storage
 и YandexGPT).
 

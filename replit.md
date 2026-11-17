@@ -1,8 +1,8 @@
-# CineFeels
+# MediaVibe
 
 ## Overview
 
-CineFeels is a Russian-language AI-powered movie recommendation platform. The application provides personalized movie suggestions with AI-generated explanations, user ratings, and content discovery features inspired by Netflix, IMDb, and Spotify UX patterns. The platform emphasizes visual storytelling through movie posters and imagery, with a focus on making AI recommendations transparent and trustworthy.
+MediaVibe is a Russian-language AI-powered movie recommendation platform. The application provides personalized movie suggestions with AI-generated explanations, user ratings, and content discovery features inspired by Netflix, IMDb, and Spotify UX patterns. The platform emphasizes visual storytelling through movie posters and imagery, with a focus on making AI recommendations transparent and trustworthy.
 
 ## User Preferences
 

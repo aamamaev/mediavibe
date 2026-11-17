@@ -1,11 +1,11 @@
-# CineFeels - Архитектурная Схема RAG + AI
+# MediaVibe - Архитектурная Схема RAG + AI
 *Last updated: December 25, 2025*
 
 ## Обзор системы
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    CineFeels Architecture                                     │
+│                                    MediaVibe Architecture                                     │
 │                                                                                               │
 │   "Критик, который всегда вас понимает" — AI-платформа рекомендаций фильмов                  │
 │                                                                                               │
@@ -820,4 +820,4 @@ attached_assets/EASE/
 
 ---
 
-*CineFeels Architecture Schema v1.0 - December 2025*
+*MediaVibe Architecture Schema v1.0 - December 2025*

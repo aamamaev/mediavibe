@@ -241,7 +241,7 @@ async function sync(options: SyncOptions): Promise<SyncResult> {
   const startTime = Date.now();
   
   console.log('\n========================================');
-  console.log('       CineFeels Movie Sync Script');
+  console.log('       MediaVibe Movie Sync Script');
   console.log('========================================\n');
   console.log(`Mode: ${options.mode}`);
   console.log(`Dry Run: ${options.dryRun}`);

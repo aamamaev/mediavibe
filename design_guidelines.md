@@ -1,4 +1,4 @@
-# CineFeels Design Guidelines
+# MediaVibe Design Guidelines
 
 ## Design Approach
 **Reference-Based**: Drawing inspiration from Netflix's content discovery patterns, IMDb's information density, and Spotify's personalized recommendation UX. The design emphasizes visual storytelling through movie imagery while highlighting the unique AI-generated explanations feature.

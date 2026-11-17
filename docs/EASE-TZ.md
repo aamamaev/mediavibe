@@ -83,7 +83,7 @@ from typing import List, Optional
 
 class RatingItem(BaseModel):
     """Одна оценка фильма от пользователя"""
-    movie_id: str = Field(..., description="fid фильма из базы CineFeels")
+    movie_id: str = Field(..., description="fid фильма из базы MediaVibe")
     rating: int = Field(..., ge=1, le=10, description="Оценка от 1 до 10")
 
 class PredictRequest(BaseModel):

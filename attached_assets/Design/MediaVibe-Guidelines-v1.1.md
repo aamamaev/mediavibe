@@ -1,4 +1,4 @@
-# CineFeels Design System Guidelines — EASE + YandexGPT Edition
+# MediaVibe Design System Guidelines — EASE + YandexGPT Edition
 
 **Version 1.1.0** | December 22, 2025 | Production-Ready with AI Integration
 
@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-CineFeels Design System v1.1 интегрирует **EASE рекомендации** (коллаборативная фильтрация) и **YandexGPT объяснения** (AI-generated critique) в единую дизайн-систему, основанную на слогане **"Критик, который всегда вас понимает"**.
+MediaVibe Design System v1.1 интегрирует **EASE рекомендации** (коллаборативная фильтрация) и **YandexGPT объяснения** (AI-generated critique) в единую дизайн-систему, основанную на слогане **"Критик, который всегда вас понимает"**.
 
 Основные изменения:
 - ✅ 10-балльная шкала оценок (вместо 5-звездочки)
@@ -111,7 +111,7 @@ const componentsEASE = {
 
 | Token | Size | Weight | Use Case | Role |
 |-------|------|--------|----------|------|
-| **display** | 48px | 700 | "CineFeels" title | App identity |
+| **display** | 48px | 700 | "MediaVibe" title | App identity |
 | **headline-large** | 32px | 600 | Movie title (featured) | Film title |
 | **headline-medium** | 24px | 600 | Recommendation category | Section header |
 | **title** | 20px | 600 | MovieCard title | Film name |
@@ -578,7 +578,7 @@ User Query → SQL ILIKE → Direct Results
 **Home Layout**:
 ```
 ┌──────────────────────────────┐
-│ CineFeels (logo)  ⚙️          │
+│ MediaVibe (logo)  ⚙️          │
 ├──────────────────────────────┤
 │ QuickRating (if not auth)    │  ← NEW Primary
 │ ┌────────┐ ┌────────┐        │    (anonymous)

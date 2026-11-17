@@ -78,7 +78,7 @@ export default function Login() {
       queryClient.invalidateQueries();
       toast({
         title: "Регистрация успешна!",
-        description: "Добро пожаловать в CineFeels",
+        description: "Добро пожаловать в MediaVibe",
       });
       setLocation("/");
     },
@@ -105,7 +105,7 @@ export default function Login() {
         <CardHeader className="text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Film className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold">CineFeels</span>
+            <span className="text-2xl font-bold">MediaVibe</span>
           </div>
           <CardTitle className="text-xl">Добро пожаловать</CardTitle>
           <CardDescription>

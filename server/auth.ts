@@ -34,7 +34,7 @@ declare global {
 }
 
 export function setupAuth(app: Express) {
-  const sessionSecret = process.env.SESSION_SECRET || "cinefeels-secret-key";
+  const sessionSecret = process.env.SESSION_SECRET || "mediavibe-secret-key";
 
   // Secure cookies require HTTPS. When the app is served over plain HTTP
   // (e.g. by IP address), set SESSION_COOKIE_SECURE=false.

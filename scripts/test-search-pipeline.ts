@@ -75,7 +75,7 @@ function printStageTiming(stages: StageDiagnostic[]): void {
 
 async function runTests(): Promise<void> {
   console.log("=".repeat(80));
-  console.log("CineFeels Search Pipeline Test");
+  console.log("MediaVibe Search Pipeline Test");
   console.log("=".repeat(80));
   console.log(`Running ${TEST_QUERIES.length} test queries...\n`);
   

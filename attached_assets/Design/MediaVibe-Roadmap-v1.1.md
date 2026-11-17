@@ -1,4 +1,4 @@
-# CineFeels Implementation Roadmap — EASE + YandexGPT v1.1
+# MediaVibe Implementation Roadmap — EASE + YandexGPT v1.1
 
 **Version 1.1.0** | December 22, 2025 | 8-Week Plan with ML Integration
 
@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-CineFeels is a **production-ready** AI-powered film recommendation platform with:
+MediaVibe is a **production-ready** AI-powered film recommendation platform with:
 - **EASE Recommendations** (Python microservice on port 6334)
 - **YandexGPT Integration** (AI-generated explanations)
 - **10-Point Rating Scale** (critic-style scoring)

@@ -13,7 +13,7 @@ import { apiRequest } from "@/lib/queryClient";
 import type { MovieWithRating } from "@shared/schema";
 
 const REQUIRED_RATINGS = 5;
-const LOCAL_STORAGE_KEY = "cinefeels_quick_ratings";
+const LOCAL_STORAGE_KEY = "mediavibe_quick_ratings";
 
 interface QuickRatingsData {
   ratings: Record<string, number>;

@@ -1,4 +1,4 @@
-# CineFeels Design System v1.1 — Complete Index & Navigation
+# MediaVibe Design System v1.1 — Complete Index & Navigation
 
 **Version**: 1.1.0 | **Date**: December 22, 2025  
 **Brand**: "Критик, который всегда вас понимает"  
@@ -6,9 +6,9 @@
 
 ---
 
-## 🎬 What is CineFeels?
+## 🎬 What is MediaVibe?
 
-**CineFeels** is a **production-ready** Russian-language AI film recommendation platform that:
+**MediaVibe** is a **production-ready** Russian-language AI film recommendation platform that:
 
 1. **Remembers your taste** — 10-point rating scale (like a film critic)
 2. **Explains its choices** — AI-generated explanations from YandexGPT
@@ -29,8 +29,8 @@
 **If you are a...**
 
 #### 👨‍🎨 Designer
-→ **Start here**: [CineFeels-Design-System-v1.1.md](./CineFeels-Design-System-v1.1.md)  
-→ **Then read**: [CineFeels-Design-Guidelines-v1.1.md](./CineFeels-Design-Guidelines-v1.1.md)  
+→ **Start here**: [MediaVibe-Design-System-v1.1.md](./MediaVibe-Design-System-v1.1.md)  
+→ **Then read**: [MediaVibe-Design-Guidelines-v1.1.md](./MediaVibe-Design-Guidelines-v1.1.md)  
 → **Use**: Figma, design tokens plugin, Tailwind CSS config  
 
 **What you'll learn**:
@@ -43,8 +43,8 @@
 ---
 
 #### 💻 Frontend Developer
-→ **Start here**: [CineFeels-Components-v1.1.md](./CineFeels-Components-v1.1.md)  
-→ **Reference**: [CineFeels-Design-Guidelines-v1.1.md](./CineFeels-Design-Guidelines-v1.1.md)  
+→ **Start here**: [MediaVibe-Components-v1.1.md](./MediaVibe-Components-v1.1.md)  
+→ **Reference**: [MediaVibe-Design-Guidelines-v1.1.md](./MediaVibe-Design-Guidelines-v1.1.md)  
 → **Stack**: React 18 + TypeScript + Tailwind CSS + TanStack Query  
 
 **What you'll build**:
@@ -60,7 +60,7 @@
 ---
 
 #### 🔧 Backend/ML Engineer
-→ **Start here**: [CineFeels-Implementation-Roadmap-v1.1.md](./CineFeels-Implementation-Roadmap-v1.1.md)  
+→ **Start here**: [MediaVibe-Implementation-Roadmap-v1.1.md](./MediaVibe-Implementation-Roadmap-v1.1.md)  
 → **Deep dive**: EASE service (Python, port 6334) + YandexGPT integration  
 → **Stack**: Node.js + Express + PostgreSQL + EASE + Qdrant  
 
@@ -85,8 +85,8 @@
 ---
 
 #### 👔 PM / Tech Lead
-→ **Start here**: [CineFeels-Summary-v1.1.md](./CineFeels-Summary-v1.1.md)  
-→ **Detailed plan**: [CineFeels-Implementation-Roadmap-v1.1.md](./CineFeels-Implementation-Roadmap-v1.1.md)  
+→ **Start here**: [MediaVibe-Summary-v1.1.md](./MediaVibe-Summary-v1.1.md)  
+→ **Detailed plan**: [MediaVibe-Implementation-Roadmap-v1.1.md](./MediaVibe-Implementation-Roadmap-v1.1.md)  
 → **Timeline**: 8 weeks to MVP launch  
 
 **Key deliverables**:
@@ -106,7 +106,7 @@
 ---
 
 #### 🌍 Everyone
-→ **Overview**: [CineFeels-Summary-v1.1.md](./CineFeels-Summary-v1.1.md)  
+→ **Overview**: [MediaVibe-Summary-v1.1.md](./MediaVibe-Summary-v1.1.md)  
 → **Brand**: "Критик, который всегда вас понимает"  
 
 **Key concepts**:
@@ -121,7 +121,7 @@
 
 ## 📖 Document Details
 
-### 1. **CineFeels-Design-System-v1.1.md** (4K chars)
+### 1. **MediaVibe-Design-System-v1.1.md** (4K chars)
 
 **Strategic overview & principles**
 
@@ -148,7 +148,7 @@
 
 ---
 
-### 2. **CineFeels-Design-Guidelines-v1.1.md** (60K chars)
+### 2. **MediaVibe-Design-Guidelines-v1.1.md** (60K chars)
 
 **Complete specifications with examples**
 
@@ -194,7 +194,7 @@
 
 ---
 
-### 3. **CineFeels-Components-v1.1.md** (20K chars)
+### 3. **MediaVibe-Components-v1.1.md** (20K chars)
 
 **Component API specifications**
 
@@ -242,7 +242,7 @@
 
 ---
 
-### 4. **CineFeels-Implementation-Roadmap-v1.1.md** (15K chars)
+### 4. **MediaVibe-Implementation-Roadmap-v1.1.md** (15K chars)
 
 **8-week plan with EASE + YandexGPT integration**
 
@@ -287,7 +287,7 @@
 
 ---
 
-### 5. **CineFeels-Summary-v1.1.md** (5-8K chars)
+### 5. **MediaVibe-Summary-v1.1.md** (5-8K chars)
 
 **Complete overview & key differences**
 
@@ -333,36 +333,36 @@ Quick links and role-based guidance to all resources.
 ## 🎯 Quick Start by Task
 
 ### "I want to understand the brand"
-→ Read: CineFeels-Summary-v1.1.md  
-→ Section: "What is CineFeels?" + "Key Features v1.1"  
+→ Read: MediaVibe-Summary-v1.1.md  
+→ Section: "What is MediaVibe?" + "Key Features v1.1"  
 → Time: 10 minutes
 
 ### "I need to design the UI"
-→ Read: CineFeels-Design-Guidelines-v1.1.md  
+→ Read: MediaVibe-Design-Guidelines-v1.1.md  
 → Sections: Color System, Typography, Component Specifications  
 → Time: 2-3 hours  
 → Tools: Figma, design tokens plugin
 
 ### "I need to code the components"
-→ Read: CineFeels-Components-v1.1.md  
+→ Read: MediaVibe-Components-v1.1.md  
 → Section: Each component has Props API  
 → Time: 1 hour per component  
 → Tools: React, TypeScript, Tailwind CSS
 
 ### "I need to integrate EASE + YandexGPT"
-→ Read: CineFeels-Implementation-Roadmap-v1.1.md  
+→ Read: MediaVibe-Implementation-Roadmap-v1.1.md  
 → Section: Week 1-2 (EASE), Week 3-4 (YandexGPT)  
 → Time: 2-3 weeks  
 → Tools: Node.js, Python, FastAPI
 
 ### "I need to plan the project"
-→ Read: CineFeels-Implementation-Roadmap-v1.1.md  
+→ Read: MediaVibe-Implementation-Roadmap-v1.1.md  
 → Sections: 8-Week Roadmap, Checklist, Success Criteria  
 → Time: 1 hour  
 → Tools: JIRA, Gantt charts
 
 ### "I need the accessibility specs"
-→ Read: CineFeels-Design-Guidelines-v1.1.md  
+→ Read: MediaVibe-Design-Guidelines-v1.1.md  
 → Section: "Accessibility — Critic's Perspective"  
 → Time: 30 minutes  
 → Tools: axe DevTools, NVDA, JAWS
@@ -403,17 +403,17 @@ Quick links and role-based guidance to all resources.
 
 ```
 design-system/
-├── CineFeels-Design-System-v1.1.md
+├── MediaVibe-Design-System-v1.1.md
 │   └── Strategic overview, brand identity, tokens
-├── CineFeels-Design-Guidelines-v1.1.md
+├── MediaVibe-Design-Guidelines-v1.1.md
 │   └── Full specifications, colors, typography, components
-├── CineFeels-Components-v1.1.md
+├── MediaVibe-Components-v1.1.md
 │   └── Component APIs, props, states, examples
-├── CineFeels-Implementation-Roadmap-v1.1.md
+├── MediaVibe-Implementation-Roadmap-v1.1.md
 │   └── 8-week plan, checklist, success criteria
-├── CineFeels-Summary-v1.1.md
+├── MediaVibe-Summary-v1.1.md
 │   └── Complete overview, key differences, manifest
-└── CineFeels-INDEX-v1.1.md (this file)
+└── MediaVibe-INDEX-v1.1.md (this file)
     └── Navigation, quick start, role-based guidance
 ```
 
@@ -422,25 +422,25 @@ design-system/
 ## 🎬 Next Steps
 
 ### For Designers
-1. [ ] Review CineFeels-Design-System-v1.1.md
+1. [ ] Review MediaVibe-Design-System-v1.1.md
 2. [ ] Import design tokens into Figma
 3. [ ] Create component library in design tool
 4. [ ] Build interactive prototypes
 
 ### For Frontend Developers
-1. [ ] Review CineFeels-Components-v1.1.md
+1. [ ] Review MediaVibe-Components-v1.1.md
 2. [ ] Set up React + TypeScript + Tailwind
 3. [ ] Create component stubs (Atoms first)
 4. [ ] Implement QuickRating (Week 1-2)
 
 ### For Backend Developers
-1. [ ] Review CineFeels-Implementation-Roadmap-v1.1.md
+1. [ ] Review MediaVibe-Implementation-Roadmap-v1.1.md
 2. [ ] Set up EASE client
 3. [ ] Implement /api/recommendations/anonymous
 4. [ ] Integrate YandexGPT (Week 3-4)
 
 ### For Project Manager
-1. [ ] Review CineFeels-Summary-v1.1.md
+1. [ ] Review MediaVibe-Summary-v1.1.md
 2. [ ] Create JIRA tickets from roadmap
 3. [ ] Schedule team meetings (kickoff, weekly syncs)
 4. [ ] Set up monitoring + alerting
@@ -449,12 +449,12 @@ design-system/
 
 ## 🤝 Support & Questions
 
-**Design Questions**: Reference CineFeels-Design-Guidelines-v1.1.md  
-**Component Implementation**: Reference CineFeels-Components-v1.1.md  
-**Project Planning**: Reference CineFeels-Implementation-Roadmap-v1.1.md  
-**General Overview**: Reference CineFeels-Summary-v1.1.md  
+**Design Questions**: Reference MediaVibe-Design-Guidelines-v1.1.md  
+**Component Implementation**: Reference MediaVibe-Components-v1.1.md  
+**Project Planning**: Reference MediaVibe-Implementation-Roadmap-v1.1.md  
+**General Overview**: Reference MediaVibe-Summary-v1.1.md  
 
-**Contact**: CineFeels Design Team  
+**Contact**: MediaVibe Design Team  
 **Version**: 1.1.0  
 **Updated**: December 22, 2025  
 
@@ -464,7 +464,7 @@ design-system/
 
 > **"Критик, который всегда вас понимает"**
 > 
-> CineFeels remembers your taste, explains its choices, learns from you, stays fair, and speaks your language.
+> MediaVibe remembers your taste, explains its choices, learns from you, stays fair, and speaks your language.
 > 
 > This design system makes that promise real through thoughtful design, cutting-edge AI, and production-ready code.
 > 
@@ -472,9 +472,9 @@ design-system/
 
 ---
 
-**Document**: CineFeels-INDEX-v1.1.md  
+**Document**: MediaVibe-INDEX-v1.1.md  
 **Status**: ✅ Complete & Ready  
 **Version**: 1.1.0  
 **Date**: December 22, 2025  
 
-🎥✨ **Welcome to CineFeels.** ✨🎥
+🎥✨ **Welcome to MediaVibe.** ✨🎥

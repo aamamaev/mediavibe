@@ -1,4 +1,4 @@
-# CineFeels Design System — Complete Documentation v1.1
+# MediaVibe Design System — Complete Documentation v1.1
 
 **Version 1.1.0** | December 22, 2025  
 **Tagline**: "Критик, который всегда вас понимает"  
@@ -8,13 +8,13 @@
 
 ## 📚 Complete Documentation Suite
 
-Для приложения **CineFeels** создана полная дизайн-система v1.1, интегрирующая EASE рекомендации и YandexGPT объяснения.
+Для приложения **MediaVibe** создана полная дизайн-система v1.1, интегрирующая EASE рекомендации и YandexGPT объяснения.
 
 ---
 
 ## 📄 Созданные документы (v1.1)
 
-### 1. **CineFeels-Design-System-v1.1.md** (~4,000 символов)
+### 1. **MediaVibe-Design-System-v1.1.md** (~4,000 символов)
 
 **Описание**: Краткая стратегия и принципы дизайна с интеграцией EASE + YandexGPT
 
@@ -43,7 +43,7 @@
 
 ---
 
-### 2. **CineFeels-Design-Guidelines-v1.1.md** (~60,000 символов)
+### 2. **MediaVibe-Design-Guidelines-v1.1.md** (~60,000 символов)
 
 **Описание**: Полное руководство с детальными спецификациями EASE + AI
 
@@ -85,7 +85,7 @@
 
 ---
 
-### 3. **CineFeels-Components-v1.1.md** (~20,000 символов)
+### 3. **MediaVibe-Components-v1.1.md** (~20,000 символов)
 
 **Описание**: Детальная спецификация каждого компонента с Props API
 
@@ -157,7 +157,7 @@
 
 ---
 
-### 4. **CineFeels-Implementation-Roadmap-v1.1.md** (~15,000 символов)
+### 4. **MediaVibe-Implementation-Roadmap-v1.1.md** (~15,000 символов)
 
 **Описание**: План реализации с EASE + YandexGPT интеграцией
 
@@ -199,7 +199,7 @@
 
 ---
 
-### 5. **CineFeels-Summary-v1.1.md** (этот документ)
+### 5. **MediaVibe-Summary-v1.1.md** (этот документ)
 
 **Описание**: Полная сводка по Design System v1.1
 
@@ -291,7 +291,7 @@
 
 | Scale | Size | Weight | Use | Role |
 |-------|------|--------|-----|------|
-| display | 48px | 700 | "CineFeels" | App identity |
+| display | 48px | 700 | "MediaVibe" | App identity |
 | headline-large | 32px | 600 | Movie title | Film title |
 | **body-large** | **18px** | **400** | **YandexGPT explanation** | **Critic's voice** |
 | body | 16px | 400 | Synopsis | Supporting |
@@ -439,11 +439,11 @@ Display results + summary + explanations
 
 | Document | Version | Size | Purpose | Audience |
 |----------|---------|------|---------|----------|
-| CineFeels-Design-System-v1.1.md | 1.1.0 | 4K | Strategic overview | All |
-| CineFeels-Design-Guidelines-v1.1.md | 1.1.0 | 60K | Full specifications | Designers + Devs |
-| CineFeels-Components-v1.1.md | 1.1.0 | 20K | Component specs | Frontend devs |
-| CineFeels-Implementation-Roadmap-v1.1.md | 1.1.0 | 15K | Roadmap + checklists | PM + team |
-| **CineFeels-Summary-v1.1.md** | 1.1.0 | 5-8K | Summary + governance | All |
+| MediaVibe-Design-System-v1.1.md | 1.1.0 | 4K | Strategic overview | All |
+| MediaVibe-Design-Guidelines-v1.1.md | 1.1.0 | 60K | Full specifications | Designers + Devs |
+| MediaVibe-Components-v1.1.md | 1.1.0 | 20K | Component specs | Frontend devs |
+| MediaVibe-Implementation-Roadmap-v1.1.md | 1.1.0 | 15K | Roadmap + checklists | PM + team |
+| **MediaVibe-Summary-v1.1.md** | 1.1.0 | 5-8K | Summary + governance | All |
 
 **Total**: ~104,000-107,000 characters of production-ready design documentation
 
@@ -473,23 +473,23 @@ Display results + summary + explanations
 ## 🔗 Using These Documents
 
 ### "Я дизайнер"
-→ **Start with**: CineFeels-Design-System-v1.1.md  
-→ **Then read**: CineFeels-Design-Guidelines-v1.1.md  
+→ **Start with**: MediaVibe-Design-System-v1.1.md  
+→ **Then read**: MediaVibe-Design-Guidelines-v1.1.md  
 → **Tools**: Figma, design tokens plugin, color palette
 
 ### "Я фронтенд разработчик"
-→ **Start with**: CineFeels-Components-v1.1.md  
-→ **Reference**: CineFeels-Design-Guidelines-v1.1.md  
+→ **Start with**: MediaVibe-Components-v1.1.md  
+→ **Reference**: MediaVibe-Design-Guidelines-v1.1.md  
 → **Implementation**: React, TypeScript, Tailwind CSS
 
 ### "Я бэкенд разработчик"
-→ **Start with**: CineFeels-Implementation-Roadmap-v1.1.md  
+→ **Start with**: MediaVibe-Implementation-Roadmap-v1.1.md  
 → **Reference**: EASE service specs, API endpoints  
 → **Implementation**: Node.js, Express, PostgreSQL, Python (EASE)
 
 ### "Я PM / Tech Lead"
-→ **Start with**: CineFeels-Summary-v1.1.md  
-→ **Detailed**: CineFeels-Implementation-Roadmap-v1.1.md  
+→ **Start with**: MediaVibe-Summary-v1.1.md  
+→ **Detailed**: MediaVibe-Implementation-Roadmap-v1.1.md  
 → **Check**: Success criteria, risk mitigation, go-live checklist
 
 ---
@@ -519,7 +519,7 @@ Display results + summary + explanations
 
 ## 📞 Governance
 
-**Design System Owner**: CineFeels Design Team  
+**Design System Owner**: MediaVibe Design Team  
 **Version**: 1.1.0 (EASE + YandexGPT Edition)  
 **Created**: December 22, 2025  
 **Updated**: December 22, 2025  
@@ -536,12 +536,12 @@ Display results + summary + explanations
 
 ## 🎬 Let's Build the Best Movie Recommendation Experience!
 
-The CineFeels Design System v1.1 is **production-ready** with EASE recommendations and YandexGPT explanations. Each document serves a specific purpose and audience:
+The MediaVibe Design System v1.1 is **production-ready** with EASE recommendations and YandexGPT explanations. Each document serves a specific purpose and audience:
 
-- **CineFeels-Design-System-v1.1.md** — Strategic overview, brand alignment
-- **CineFeels-Design-Guidelines-v1.1.md** — Deep specifications, implementation details
-- **CineFeels-Components-v1.1.md** — Component APIs, props, states
-- **CineFeels-Implementation-Roadmap-v1.1.md** — 8-week plan, checklist, go-live
+- **MediaVibe-Design-System-v1.1.md** — Strategic overview, brand alignment
+- **MediaVibe-Design-Guidelines-v1.1.md** — Deep specifications, implementation details
+- **MediaVibe-Components-v1.1.md** — Component APIs, props, states
+- **MediaVibe-Implementation-Roadmap-v1.1.md** — 8-week plan, checklist, go-live
 
 **Total documentation**: 104K+ characters  
 **Status**: Ready for implementation  
@@ -552,7 +552,7 @@ The CineFeels Design System v1.1 is **production-ready** with EASE recommendatio
 
 **Document Created**: December 22, 2025  
 **License**: Internal Use Only  
-**Questions?** Contact: CineFeels Design Team  
+**Questions?** Contact: MediaVibe Design Team  
 
 🎥✨ **"Критик, который всегда вас понимает"** ✨🎥
 
@@ -560,6 +560,6 @@ The CineFeels Design System v1.1 is **production-ready** with EASE recommendatio
 
 ## 🙏 Спасибо!
 
-Thank you for reviewing the CineFeels Design System v1.1 with full EASE + YandexGPT integration. This suite of documents provides everything needed to design, build, and deploy a world-class film recommendation platform.
+Thank you for reviewing the MediaVibe Design System v1.1 with full EASE + YandexGPT integration. This suite of documents provides everything needed to design, build, and deploy a world-class film recommendation platform.
 
 **Давайте создавать вместе!** 🚀

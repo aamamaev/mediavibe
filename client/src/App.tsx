@@ -39,7 +39,7 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="system" storageKey="cinefeels-theme">
+      <ThemeProvider defaultTheme="system" storageKey="mediavibe-theme">
         <TooltipProvider>
           <Toaster />
           <Router />

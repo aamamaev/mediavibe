@@ -28,7 +28,7 @@ export function Header({ user, className }: HeaderProps) {
         <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer" data-testid="link-logo">
             <Film className="w-7 h-7 text-primary" />
-            <span className="text-xl font-bold hidden sm:inline">CineFeels</span>
+            <span className="text-xl font-bold hidden sm:inline">MediaVibe</span>
           </div>
         </Link>
 
