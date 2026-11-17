@@ -1,0 +1,22 @@
+# EASE recommendation service (FastAPI + NumPy/SciPy)
+FROM python:3.11-slim
+
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    EASE_PORT=6334
+
+COPY server/ease_service/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# main.py resolves its data directory as <__file__>/../../.., so keep the
+# same layout as the dist/ folder of the Node build.
+COPY server/ease_service /app/dist/ease_service
+COPY attached_assets/EASE /app/attached_assets/EASE
+
+EXPOSE 6334
+
+HEALTHCHECK --interval=20s --timeout=5s --start-period=40s --retries=10 \
+  CMD python -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:6334/health', timeout=3)"
+
+CMD ["python", "/app/dist/ease_service/main.py"]

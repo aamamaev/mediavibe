@@ -1,0 +1,110 @@
+name: mediavibe
+
+x-app-env: &app-env
+  DATABASE_URL: postgres://${POSTGRES_USER:-mediavibe}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@postgres:5432/${POSTGRES_DB:-mediavibe}
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mediavibe}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${POSTGRES_DB:-mediavibe}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: unless-stopped
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    ports:
+      - "127.0.0.1:6333:6333"
+
+  ease:
+    build:
+      context: .
+      dockerfile: Dockerfile.ease
+    restart: unless-stopped
+    environment:
+      EASE_PORT: "6334"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:6334/health', timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      <<: *app-env
+      NODE_ENV: production
+      PORT: "5000"
+      START_EASE_SERVICE: "false"
+      SESSION_COOKIE_SECURE: "false"
+      QDRANT_HOST: http://qdrant:6333
+      EASE_SERVICE_URL: http://ease:6334
+    ports:
+      - "80:5000"
+    volumes:
+      - model_cache:/app/.cache
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      ease:
+        condition: service_healthy
+
+  # One-off maintenance containers:
+  #   docker compose run --rm migrate
+  #   docker compose run --rm tools npx tsx scripts/sync-movies.ts
+  #   docker compose run --rm tools npx tsx scripts/index-movies-llamaindex.ts
+  migrate:
+    profiles: ["tools"]
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      target: deps
+    env_file: .env
+    environment:
+      <<: *app-env
+    command: ["npx", "drizzle-kit", "push", "--force"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  tools:
+    profiles: ["tools"]
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      target: deps
+    env_file: .env
+    environment:
+      <<: *app-env
+      QDRANT_HOST: http://qdrant:6333
+      EASE_SERVICE_URL: http://ease:6334
+    volumes:
+      - model_cache:/app/.cache
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+
+volumes:
+  pgdata:
+  qdrant_storage:
+  model_cache:

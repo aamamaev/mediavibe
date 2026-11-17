@@ -1,0 +1,168 @@
+нтеграция YandexGPT в системе реализована через следующие компоненты:
+
+1. YandexGPT Client (server/yandexgpt.ts)
+Основной класс для работы с API:
+
+export class YandexGPTClient {
+  private apiUrl = 'https://llm.api.cloud.yandex.net/foundationModels/v1/completion';
+  private apiKey: string;
+  private catalogId: string;
+  private model: string; // 'yandexgpt-lite' по умолчанию
+}
+Ключевые особенности:
+
+Использует REST API Yandex Cloud Foundational Models
+Поддерживает streaming (отключен для стабильности)
+Timeout 120 секунд для длительных запросов
+Автоматическая конвертация формата сообщений в формат YandexGPT
+Метод chat():
+
+async chat(
+  messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>,
+  options?: { temperature?: number; maxTokens?: number }
+)
+Преобразует входящие сообщения из общего формата в YandexGPT формат:
+
+content → text
+Формирует modelUri: gpt://{catalogId}/{model}/latest
+Отправляет POST запрос с заголовком Authorization: Api-Key {apiKey}
+Обработка ошибок:
+
+HTTP 401 → "YandexGPT authentication failed"
+HTTP 429 → "YandexGPT rate limit exceeded"
+Timeout → "YandexGPT request timed out"
+2. LLM Service (server/llm.ts)
+Инициализация провайдера:
+
+constructor() {
+  const yandexApiKey = process.env.YANDEX_API_KEY;
+  const yandexCatalogId = process.env.YANDEX_CATALOG_ID;
+  
+  if (yandexApiKey && yandexCatalogId) {
+    this.yandexgptClient = new YandexGPTClient(
+      yandexApiKey, 
+      yandexCatalogId, 
+      'yandexgpt-lite'
+    );
+  }
+}
+YandexGPT как провайдер по умолчанию:
+
+// Если оба провайдера доступны, YandexGPT выбирается первым
+this.currentProvider = this.yandexgptClient ? 'yandexgpt' : 'gigachat';
+Unified вызов через callLLMWithProvider():
+
+private async callLLMWithProvider(
+  provider: LLMProvider, 
+  systemPrompt: string, 
+  userPrompt: string
+): Promise<string> {
+  if (provider === 'yandexgpt') {
+    const response = await this.yandexgptClient.chat(
+      [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt }
+      ],
+      { temperature: 0.1, maxTokens: 2000 }
+    );
+    return response.choices[0]?.message?.content;
+  }
+}
+3. Автоматический Fallback
+Механизм переключения при ошибках:
+
+private async callLLM(systemPrompt: string, userPrompt: string): Promise<string> {
+  try {
+    return await this.callLLMWithProvider(this.currentProvider, systemPrompt, userPrompt);
+  } catch (error) {
+    if (this.isAuthOrSystemError(error)) {
+      const alternativeProvider = this.getAlternativeProvider();
+      
+      if (alternativeProvider) {
+        console.log(`[LLM] 🔄 Fallback to ${alternativeProvider}...`);
+        const previousProvider = this.currentProvider;
+        this.currentProvider = alternativeProvider;
+        
+        const result = await this.callLLMWithProvider(alternativeProvider, systemPrompt, userPrompt);
+        
+        // Восстанавливаем исходный провайдер (fallback не сохраняется)
+        this.currentProvider = previousProvider;
+        return result;
+      }
+    }
+    throw error;
+  }
+}
+Условия для fallback:
+
+HTTP 401/403 (авторизация)
+HTTP 5xx (системные ошибки)
+Network errors (ECONNREFUSED, ETIMEDOUT, ENOTFOUND)
+Сообщения об ошибках авторизации
+4. Batch Verification
+Все ответы в одном запросе:
+
+async verifyAnswerBatch(requests: VerifyAnswerRequest[]): Promise<VerifyAnswerResponse[]> {
+  const systemPrompt = `Проверь ответы НЕСКОЛЬКИХ команд на один вопрос.
+  
+  Ответь JSON МАССИВОМ с результатами для каждой команды...`;
+  let userPrompt = `Вопрос: ${firstRequest.question}
+Правильный ответ: ${firstRequest.correctAnswer}
+Ответы команд:
+1. "Команда А": "ответ А"
+2. "Команда Б": "ответ Б"
+...`;
+  const content = await this.callLLM(systemPrompt, userPrompt);
+  const results = JSON.parse(jsonText); // Массив результатов
+}
+Fallback на sequential при ошибке batch:
+
+catch (error) {
+  console.log('[LLM] 🔄 Falling back to sequential verification...');
+  return this.verifyAnswerSequential(requests);
+}
+5. Graceful Degradation
+Обработка non-JSON ответов:
+
+try {
+  result = JSON.parse(jsonText);
+} catch (parseError) {
+  // Эвристический анализ текстового ответа
+  const lowerContent = content.toLowerCase();
+  let decision = 'incorrect';
+  let confidence = 50;
+  
+  if (lowerContent.includes('правильн') || lowerContent.includes('верн')) {
+    decision = 'correct';
+    confidence = 70;
+  }
+  
+  result = { decision, confidence, explanation: content.substring(0, 300) };
+}
+6. Конфигурация через переменные окружения
+Требуемые переменные:
+
+YANDEX_API_KEY - API ключ из Yandex Cloud
+YANDEX_CATALOG_ID - ID каталога/folder
+Python SDK интеграция (опциональная):
+
+Файл attached_assets/yandex_api_integration.py показывает альтернативный способ через Python SDK:
+
+from yandex_cloud_ml_sdk import YCloudML
+sdk = YCloudML(folder_id=FOLDER_ID, auth=API_KEY)
+model = sdk.models.completions(MODEL_NAME, model_version=MODEL_VERSION)
+model = model.configure(temperature=TEMPERATURE)
+Но в production используется TypeScript клиент для единообразия стека.
+
+7. Преимущества YandexGPT в системе
+Из тестирования (TEST-RESULTS-SUMMARY.md):
+
+✅ Стабильное время ответа: 2,382ms - 2,948ms
+✅ Нет ограничений concurrent requests (в отличие от GigaChat: 1 req)
+✅ Лучше для параллельных игр: 91.7% accuracy vs 50% у GigaChat
+✅ Batch-проверка работает надежно
+Рекомендация из CHANGELOG-FALLBACK.md:
+
+YandexGPT теперь используется по умолчанию как более стабильный и производительный провайдер для production workloads.
+
+Система спроектирована так, что можно легко переключаться между провайдерами через Admin UI или API, а fallback обеспечивает высокую доступность сервиса.
